@@ -147,14 +147,6 @@ created_by: cpons
 creation_date: 2022-10-18T14:38:51Z
 
 [Term]
-id: SP:0010019
-name: curved fruit shape index
-def: "It is a measure of how curved is the fruit" []
-is_a: SP:0000039 ! fruit shape index
-created_by: cpons
-creation_date: 2022-10-18T14:42:18Z
-
-[Term]
 id: SP:0010020
 name: fruit internal eccentricity
 def: "The asymmetry of the fruit." []
@@ -244,7 +236,7 @@ creation_date: 2022-10-19T08:58:36Z
 
 [Term]
 id: SP:0010032
-name: leaf width
+name: leaf width trait
 is_a: SP:0000042 ! leaf size
 created_by: cpons
 creation_date: 2022-10-19T09:05:13Z
@@ -419,7 +411,7 @@ creation_date: 2022-10-19T10:50:13Z
 [Term]
 id: SP:0010056
 name: Petals Curvature
-is_a: SP:0010378 ! petal
+is_a: SP:0000412 ! petal
 created_by: cpons
 creation_date: 2022-10-19T10:50:13Z
 
@@ -541,13 +533,6 @@ name: Acidity
 is_a: SP:0000167 ! fruit physicochemical  properties
 created_by: cpons
 creation_date: 2022-10-19T12:21:25Z
-
-[Term]
-id: SP:0010074
-name: pH
-is_a: SP:0010073 ! Acidity
-created_by: cpons
-creation_date: 2022-10-19T12:21:43Z
 
 [Term]
 id: SP:0010075
@@ -686,14 +671,6 @@ xref: TO:0000862
 is_a: SP:0000008 ! flower morphology
 created_by: cpons
 creation_date: 2022-10-22T18:25:31Z
-
-[Term]
-id: SP:0010094
-name: pistil
-xref: TO:0000223
-is_a: SP:0010093 ! floral organ morphology trait
-created_by: cpons
-creation_date: 2022-10-22T18:26:16Z
 
 [Term]
 id: SP:0010095
@@ -1664,14 +1641,6 @@ created_by: cpons
 creation_date: 2022-10-23T13:22:08Z
 
 [Term]
-id: SP:0010227
-name: proximal fruit end color, observation 0-7 nominal scale
-def: "0: Uniform, 3: Light green, 5:  Medium green,  7: Dark green." [SGN:MJD]
-relationship: variable_of SP:0010403 ! green shoulder color
-created_by: cpons
-creation_date: 2022-12-02T09:50:51Z
-
-[Term]
 id: SP:0010228
 name: Liriomyza bryoniae
 is_a: SP:0010225 ! Leaf miners
@@ -2115,22 +2084,6 @@ def: "1:Very low or no visible sign of susceptibility,3:Low,5:Intermediate,7:Hig
 relationship: variable_of SP:0010219 ! Lygus spp
 created_by: cpons
 creation_date: 2022-10-23T17:42:18Z
-
-[Term]
-id: SP:0010287
-name: Lygus spp resistance in 0-1 scale
-def: "0:tolerant, 1:susceptible" []
-relationship: variable_of SP:0010220 ! Nesidiocoris tenuis
-created_by: cpons
-creation_date: 2022-10-23T17:42:28Z
-
-[Term]
-id: SP:0010288
-name: Lygus spp resistance in 1-9 scale
-def: "1:Very low or no visible sign of susceptibility,3:Low,5:Intermediate,7:High,9:Very high." []
-relationship: variable_of SP:0010220 ! Nesidiocoris tenuis
-created_by: cpons
-creation_date: 2022-10-23T17:42:28Z
 
 [Term]
 id: SP:0010289
@@ -2613,21 +2566,6 @@ created_by: cpons
 creation_date: 2022-10-23T23:44:22Z
 
 [Term]
-id: SP:0010352
-name: fruit shape eccentric
-def: "The asymmetry of the fruit. Height of internal ellipse / total height." [SGN:EVDK]
-synonym: "ecc" EXACT []
-synonym: "eccenticity" RELATED []
-xref: PO:0007010
-xref: PO:0007042
-xref: PO:0009001
-is_a: SP:0010020 ! fruit internal eccentricity
-is_a: SP:0010038 ! fruit asymmetry
-is_a: SP:0000500 ! Variables
-created_by: cpons
-creation_date: 2022-10-24T00:06:57Z
-
-[Term]
 id: SP:0010353
 name: Saturation
 is_a: SP:0010358 ! endocarp CIE L*C*H* scale color
@@ -2804,13 +2742,6 @@ def: "defined as the difference between H.Asymmetry.Ob (SP:0000161) and v- H.Asy
 relationship: variable_of SP:0010038 ! fruit asymmetry
 created_by: cpons
 creation_date: 2022-12-07T12:57:20Z
-
-[Term]
-id: SP:0010378
-name: petal
-relationship: part_of SP:0010093 ! floral organ morphology trait
-created_by: cpons
-creation_date: 2022-10-24T03:26:13Z
 
 [Term]
 id: SP:0010379
@@ -3558,7 +3489,7 @@ relationship: variable_of SP:0010017 ! fruit shape index external
 
 [Term]
 id: SP:0000041
-name: leaf width
+name: leaf width in cm
 def: "Leaf width in cm." [SGN:EVDK]
 synonym: "TO:0000370" RELATED []
 xref: PATO:0000921
@@ -3707,13 +3638,15 @@ is_a: SP:0000471 ! leaf color phenotypic values
 
 [Term]
 id: SP:0000058
-name: fruit shape eccentric
+name: fruit shape eccentric variable
 def: "The asymmetry of the fruit. Height of internal ellipse / total height." [SGN:EVDK]
 synonym: "ecc" EXACT []
 synonym: "eccenticity" RELATED []
 xref: PO:0007010
 xref: PO:0007042
 xref: PO:0009001
+relationship: variable_of SP:0010020 ! fruit internal eccentricity
+is_a: SP:0010038 ! fruit asymmetry
 is_a: SP:0000500 ! Variables
 
 [Term]
@@ -3787,7 +3720,7 @@ relationship: variable_of SP:0010036 ! Proximal Eccentricity
 
 [Term]
 id: SP:0000065
-name: horizontal asymmetry
+name: horizontal asymmetry degree variable
 def: "[sum|n-ny|]/L. Degree of horizontal asymmetry ." [SGN:EVDK]
 synonym: "hor" RELATED []
 xref: PO:0007010
@@ -4817,14 +4750,13 @@ xref: PO:0007010
 xref: PO:0007042
 xref: PO:0009001
 is_a: SP:0000500 ! Variables
-relationship: variable_of SP:0010352 ! fruit shape eccentric
-relationship: variable_of SP:0000058 ! fruit shape eccentric
+relationship: variable_of SP:0010020 ! fruit internal eccentricity
 created_by: naama
 creation_date: 2008-03-31T10:09:00Z
 
 [Term]
 id: SP:0000165
-name: total soluble solids
+name: total soluble solids variable
 def: "The total soluble solids in the fruit (usually sugars and acids)." [SGN:NM]
 synonym: "Brix" EXACT []
 relationship: variable_of SP:0010075 ! total soluble solids
@@ -4858,7 +4790,7 @@ id: SP:0000170
 name: pH
 def: "The pH of the fruit." [SGN:NM]
 is_a: SP:0000500 ! Variables
-relationship: variable_of SP:0010074 ! pH
+relationship: variable_of SP:0010073 ! Acidity
 
 [Term]
 id: SP:0000171
@@ -6982,6 +6914,7 @@ creation_date: 2017-09-12T12:57:55Z
 id: SP:0000412
 name: petal
 relationship: part_of SP:0000082 ! flower organ size
+relationship: part_of SP:0010093 ! floral organ morphology trait
 created_by: naama
 creation_date: 2017-09-12T12:58:14Z
 
@@ -7049,6 +6982,8 @@ creation_date: 2017-09-12T13:35:52Z
 [Term]
 id: SP:0000420
 name: pistil
+xref: TO:0000223
+is_a: SP:0010093 ! floral organ morphology trait
 relationship: part_of SP:0000082 ! flower organ size
 created_by: naama
 creation_date: 2017-09-12T13:36:04Z
@@ -7080,7 +7015,7 @@ creation_date: 2017-09-12T13:37:40Z
 
 [Term]
 id: SP:0000424
-name: ovary length
+name: ovary length in cm
 def: "Length of the ovary in cm." [SGN:EVDK]
 is_a: SP:0000500 ! Variables
 relationship: variable_of SP:0010060 ! ovary length
@@ -7102,13 +7037,13 @@ creation_date: 2017-09-12T13:58:59Z
 
 [Term]
 id: SP:0000426
-name: curved fruit shape index
+name: curved fruit shape index ratio
 def: "The ratio of curved height to the width of the fruit at mid-curved-height, as measured perpendicular to the curved height line." [SGN:EVDK]
 xref: PO:0007010
 xref: PO:0007042
 xref: PO:0009001
 is_a: SP:0000500 ! Variables
-relationship: variable_of SP:0010019 ! curved fruit shape index
+relationship: variable_of SP:0000039 ! fruit shape index
 created_by: naama
 creation_date: 2017-09-12T14:03:15Z
 
@@ -7265,7 +7200,7 @@ creation_date: 2017-12-15T17:16:28Z
 [Term]
 id: SP:0000445
 name: style
-relationship: part_of SP:0010094 ! pistil
+relationship: part_of SP:0000420 ! pistil
 created_by: naama
 creation_date: 2017-12-21T16:11:56Z
 
@@ -7542,6 +7477,7 @@ id: SP:0000478
 name: proximal fruit end color, observation 0-7 nominal scale
 def: "0: Uniform, 3: Light green, 5:  Medium green,  7: Dark green." [SGN:MJD]
 is_a: SP:0000500 ! Variables
+relationship: variable_of SP:0010403 ! green shoulder color
 created_by: naama
 creation_date: 2018-03-29T15:44:49Z
 
